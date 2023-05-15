@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sector {
+
+            /* margin: 20px; */
+
+            width: 100px;
+            height: 100px;
+            animation: sector 4s linear both infinite;
+
+            background-color: #fff;
+
+            clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+
+        }
+
+        .outer {
+            /* border-radius: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            animation: w 4s linear both infinite;
+            transform: rotate(45deg);
+            background: red;
+
+
+        }
+
+        @keyframes w {
+            0% {
+                background: #fff;
+            }
+
+            50% {
+                background: #fff;
+            }
+
+            50.00001% {
+
+                background: red;
+            }
+
+            100% {
+
+                background: red;
+            }
+        }
+
+        @keyframes sector {
+            0% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 0% 0%);
+            }
+
+            12.5% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+            }
+
+            12.500001% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%);
+            }
+
+            25% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%);
+            }
+
+            25.000001% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 100% 100%);
+            }
+
+            37.5% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+
+            37.500001% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+            }
+
+            50% {
+                background: red;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+            }
+
+            50.000001% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 0% 0%);
+            }
+
+            62.5% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+            }
+
+            62.500001% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%);
+            }
+
+            75% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%);
+            }
+
+            75.000001% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 100% 100%);
+            }
+
+            87.5% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+
+            87.500001% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+            }
+
+            100% {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+            }
+        }
+
+        @keyframes test {
+            from {
+                background: #fff;
+                clip-path: polygon(50% 50%, 0% 0%, 0% 0%);
+            }
+
+            25% {
+                /*     background:#fff; */
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+            }
+
+            25.000001% {
+                /*     background:#fff; */
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%);
+            }
+
+            50% {
+                /*     background:#fff; */
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%);
+            }
+
+            50.000001% {
+                /*     background:#fff; */
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 100% 100%);
+            }
+
+            75% {
+                /*     background:#fff; */
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+
+            75.000001% {
+                /*     background:#fff; */
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+            }
+
+            to {
+                /*     background:#fff; */
+                clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+            }
+        }
+
+        .test {
+            position: absolute;
+            box-sizing: border-box;
+            top: 50%;
+            left: 50%;
+            width: 102px;
+            height: 102px;
+            border-radius: 100%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #fff;
+        }
+
+        .container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+        }
+
+        .style-2 {
+            width: 15px;
+            height: 15px;
+            border: 2px solid;
+            border-color: #00B365 transparent;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(359deg);
+            }
+        }
+
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Inspirated from  http://www.alessioatzeni.com/wp-content/tutorials/html-css/CSS3-loading-animation-loop/index.html */
+        .ouro {
+            position: relative;
+            display: inline-block;
+            height: 7.5px;
+            width: 7.5px;
+            /* margin: 1em; */
+            border-radius: 50%;
+            background: none repeat scroll 0 0 #fff;
+            overflow: hidden;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, .1) inset, 0 0 25px rgba(0, 0, 255, 0.075); */
+        }
+
+
+
+        .ouro>span {
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .left {
+            left: 0
+        }
+
+        .right {
+            left: 50%
+        }
+
+        .anim {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 999px;
+            background: none repeat scroll 0 0 #00B365;
+            opacity: 0.8;
+            animation: ui-spinner-rotate-left 4s infinite;
+            transform-origin: 0 50% 0;
+        }
+
+        .left .anim {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        .right .anim {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            left: -100%;
+            transform-origin: 100% 50% 0;
+        }
+
+
+        /* v3 */
+        .ouro3 .anim {
+            animation-delay: 0s;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+        }
+        .ouro3 .right .anim {
+            animation-name: ui-spinner-rotate-right;
+            animation-delay: 0;
+            animation-delay: 0;
+        }
+
+
+
+        @keyframes ui-spinner-rotate-right {
+            0% {
+                transform: rotate(0deg)
+            }
+            25% {
+                transform: rotate(180deg)
+            }
+            50% {
+                transform: rotate(180deg)
+            }
+            75% {
+                transform: rotate(360deg)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+        @keyframes ui-spinner-rotate-left {
+            0% {
+                transform: rotate(0deg)
+            }
+            25% {
+                transform: rotate(0deg)
+            }
+            50% {
+                transform: rotate(180deg)
+            }
+            75% {
+                transform: rotate(180deg)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+    
+
+        .context {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 20px;
+            height: 20px;
+        }
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="outer">
+            <div class="sector"></div>
+        </div>
+        <div class="test"></div>
+        <div class="circle">
+            <span class="loading style-2"></span>
+        </div>
+
+
+    </div> -->
+
+    <div class="context">
+       
+        <span class="loading style-2">
+        </span>
+        <span class="ouro ouro3 inner">
+            <span class="left"><span class="anim"></span></span>
+            <span class="right"><span class="anim"></span></span>
+           
+        </span>
+    </div>
+
+  
+
+</body>
+
+</html>
